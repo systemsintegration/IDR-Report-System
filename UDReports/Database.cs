@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
+using DocumentRepository.DAL;
 
 namespace UDReports
 {
     public class Database
     {
-        string ConnectionString =$@"Data Source = C:\Users\{Environment.UserName}\{Environment.SpecialFolder.Desktop}\FinalTest.db; Version=3;datetimeformat=CurrentCulture;";
+        string ConnectionString = $@"Data Source = {AppSettings.DatabasePath}; Version=3;datetimeformat=CurrentCulture;";
         SQLiteConnection connection;
 
         public void OpenConnection()
